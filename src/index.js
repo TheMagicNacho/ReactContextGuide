@@ -2,16 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+// STEP 3: Import the Site context provider into the index.js
+import SiteContextProvider from '../src/contexts/SiteData'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* STEP 4: Wrap all children componenets in the ContextProvider Tag we just created */}
+    <SiteContextProvider> {/* CONTEXT PROVIDER */}
+       <App />  {/* CHILD COMPONENT */}
+    </SiteContextProvider>
+
+
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
